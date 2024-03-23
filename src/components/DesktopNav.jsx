@@ -8,8 +8,13 @@ export default function DesktopNav() {
         <li>
           <a href="#">Lugares</a>
         </li>
-        <li className="rounded-xl bg-sky-600 px-8 py-2 text-white">
-          <a href="#">Tour</a>
+        <li>
+          <a
+            className="rounded-xl bg-sky-600 px-8 py-2 text-white hover:bg-sky-500"
+            href="#"
+          >
+            Tour
+          </a>
         </li>
       </ul>
     </nav>

@@ -1,11 +1,21 @@
+import Button from './Button.jsx';
+
 export default function Layout() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="flex flex-col justify-center gap-12 px-8 py-10 sm:flex-row sm:py-14 lg:py-14">
-        <h1 className="font-playfair text-center text-3xl font-bold text-slate-900 sm:text-4xl md:text-left lg:text-7xl">
-          Explora <br />
-          Valparaiso
-        </h1>
+        <div className="pt-8">
+          <h1 className="font-playfair text-center text-3xl font-bold text-slate-900 sm:text-4xl md:text-left lg:text-7xl">
+            Explora <br />
+            Valparaiso
+          </h1>
+          <p className="mt-6 text-slate-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            voluptate ratione doloremque.
+          </p>
+          <Button className="mt-4">Empieza a explorar</Button>
+        </div>
+
         <div className="width-full flex gap-4">
           <div className="flex flex-col gap-4">
             <img

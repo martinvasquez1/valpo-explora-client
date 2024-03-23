@@ -1,17 +1,17 @@
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 
-const buttonStyles = cva(['rounded-md'], {
+const buttonStyles = cva(['rounded-xl'], {
   variants: {
     variant: {
-      default: ['bg-indigo-500 hover:bg-indigo-300'],
+      default: ['bg-sky-600 hover:bg-sky-500 text-white'],
       ghost: ['hover:bg-gray-100'],
       destructive: [],
       link: [],
     },
     size: {
-      default: [],
-      lg: ['px-5 py-9'],
+      default: ['px-8 py-2'],
+      lg: ['px-14 py-4'],
       icon: ['p-2'],
     },
   },
