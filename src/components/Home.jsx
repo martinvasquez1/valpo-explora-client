@@ -2,8 +2,9 @@ export default function Layout() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="flex justify-center px-4 py-20 sm:py-24 lg:py-28">
-        <h1 className="text-center text-3xl font-semibold text-slate-900 sm:text-4xl lg:text-5xl">
-          Hero
+        <h1 className="font-playfair text-center text-3xl font-bold text-slate-900 sm:text-4xl md:text-left lg:text-7xl">
+          Explora <br />
+          Valparaiso
         </h1>
       </div>
       <div className="px-4 py-10">
