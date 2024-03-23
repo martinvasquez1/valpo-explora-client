@@ -3,10 +3,14 @@ export default function DesktopNav() {
     <nav className="hidden sm:block">
       <ul className="flex items-center gap-8 text-slate-900">
         <li>
-          <a href="#">Inicio</a>
+          <a href="#" className="">
+            Inicio
+          </a>
         </li>
         <li>
-          <a href="#">Lugares</a>
+          <a href="#" className="">
+            Lugares
+          </a>
         </li>
         <li>
           <a

@@ -39,7 +39,9 @@ export default function Layout() {
         </div>
       </div>
       <div className="px-8 py-10">
-        <h2 className="text-2xl font-semibold text-slate-900">H2</h2>
+        <h2 className="font-playfair text-3xl font-semibold text-slate-900">
+          Destinos populares
+        </h2>
       </div>
     </div>
   );
