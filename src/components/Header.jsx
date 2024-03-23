@@ -9,7 +9,7 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="relative mx-auto flex max-w-5xl items-center justify-between p-4 text-white">
+    <header className="relative mx-auto flex max-w-5xl items-center justify-between px-8 py-4 text-white">
       <Logo />
       <Button
         variant="ghost"

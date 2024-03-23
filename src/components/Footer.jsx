@@ -3,7 +3,7 @@ import Logo from './Logo';
 export default function Footer() {
   return (
     <footer className="mt-10 py-10">
-      <div className="mx-auto flex max-w-5xl flex-col justify-between gap-4 px-4 sm:flex-row">
+      <div className="mx-auto flex max-w-5xl flex-col justify-between gap-4 px-8 sm:flex-row">
         <div className="text-center sm:text-left">
           <Logo />
           <p className="pt-1">Lorem ipsum dolor sit amet consectetur.</p>
