@@ -4,16 +4,18 @@ export default function Layout() {
   return (
     <div className="mx-auto max-w-5xl">
       <div className="flex flex-col justify-center gap-12 px-8 py-10 sm:flex-row sm:py-14 lg:py-14">
-        <div className="pt-8">
-          <h1 className="font-playfair text-center text-3xl font-bold text-slate-900 sm:text-4xl md:text-left lg:text-7xl">
+        <div className="pt-0 sm:pt-8">
+          <h1 className="text-center font-playfair text-4xl font-bold text-slate-900 sm:text-left sm:text-5xl lg:text-7xl">
             Explora <br />
             Valparaiso
           </h1>
-          <p className="mt-6 text-slate-700">
+          <p className="mt-6 px-10 text-center text-slate-700 sm:px-0 sm:text-left">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
             voluptate ratione doloremque.
           </p>
-          <Button className="mt-4">Empieza a explorar</Button>
+          <div className="flex justify-center sm:justify-start">
+            <Button className="mt-6 sm:mt-4">Empieza a explorar</Button>
+          </div>
         </div>
 
         <div className="width-full flex gap-4">
