@@ -1,4 +1,26 @@
 import Button from './Button.jsx';
+import PlaceCard from './PlaceCard.jsx';
+
+const mockPlaces = [
+  {
+    name: 'Lorem ipsum',
+    imgSrc:
+      'https://images.unsplash.com/photo-1617173205830-95d15d469996?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    id: 0,
+  },
+  {
+    name: 'Dolor, sit amet',
+    imgSrc:
+      'https://images.unsplash.com/photo-1586461827441-b4cf43af68ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    id: 1,
+  },
+  {
+    name: 'In, sapiente',
+    imgSrc:
+      'https://images.unsplash.com/photo-1552686637-83c59eba15f6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    id: 2,
+  },
+];
 
 export default function Layout() {
   return (
@@ -44,6 +66,11 @@ export default function Layout() {
         <h2 className="font-playfair text-3xl font-semibold text-slate-900">
           Destinos populares
         </h2>
+        <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
+          {mockPlaces.map((place) => {
+            return <PlaceCard key={place.id} data={place} />;
+          })}
+        </div>
       </div>
     </div>
   );
