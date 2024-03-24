@@ -39,9 +39,9 @@ export default function Layout() {
           <div className="flex justify-center sm:justify-start">
             <Link
               to="/"
-              className="mt-6 rounded-xl bg-blue-900 px-8 py-2 text-white hover:bg-sky-600 sm:mt-4"
+              className="mt-6 rounded-xl bg-blue-900 px-8 py-2 font-medium text-white hover:bg-sky-600 sm:mt-4"
             >
-              Empieza a explorar
+              Empieza tu aventura
             </Link>
           </div>
         </div>
