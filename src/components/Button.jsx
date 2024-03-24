@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 const buttonStyles = cva(['rounded-xl'], {
   variants: {
     variant: {
-      default: ['bg-sky-600 hover:bg-sky-500 text-white'],
+      default: ['bg-blue-900 hover:bg-sky-600 text-white'],
       ghost: ['hover:bg-gray-100'],
       destructive: [],
       link: [],

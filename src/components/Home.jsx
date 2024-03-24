@@ -1,4 +1,5 @@
-import Button from './Button.jsx';
+import { Link } from 'react-router-dom';
+
 import PlaceCard from './PlaceCard.jsx';
 
 const mockPlaces = [
@@ -24,8 +25,8 @@ const mockPlaces = [
 
 export default function Layout() {
   return (
-    <div className="mx-auto max-w-5xl">
-      <div className="flex flex-col justify-center gap-12 px-8 py-10 sm:flex-row sm:py-14 lg:py-14">
+    <div className="mx-auto">
+      <div className="mx-auto flex max-w-5xl flex-col justify-center gap-12 px-8 py-10 sm:flex-row sm:py-14 lg:py-14">
         <div className="pt-0 sm:pt-8">
           <h1 className="text-center font-playfair text-4xl font-bold text-slate-900 sm:text-left sm:text-5xl lg:text-7xl">
             Explora <br />
@@ -36,10 +37,14 @@ export default function Layout() {
             voluptate ratione doloremque.
           </p>
           <div className="flex justify-center sm:justify-start">
-            <Button className="mt-6 sm:mt-4">Empieza a explorar</Button>
+            <Link
+              to="/"
+              className="mt-6 rounded-xl bg-blue-900 px-8 py-2 text-white hover:bg-sky-600 sm:mt-4"
+            >
+              Empieza a explorar
+            </Link>
           </div>
         </div>
-
         <div className="width-full flex gap-4">
           <div className="flex flex-col gap-4">
             <img
@@ -62,7 +67,7 @@ export default function Layout() {
           </div>
         </div>
       </div>
-      <div className="px-8 py-10">
+      <div className="mx-auto max-w-5xl px-8 py-10">
         <h2 className="font-playfair text-3xl font-semibold text-slate-900">
           Destinos populares
         </h2>
@@ -70,6 +75,26 @@ export default function Layout() {
           {mockPlaces.map((place) => {
             return <PlaceCard key={place.id} data={place} />;
           })}
+        </div>
+      </div>
+      <div className="mx-auto mt-6 flex max-w-5xl flex-col gap-4 px-8 py-10 sm:flex-row sm:gap-10">
+        <div>
+          <h2 className="font-playfair text-3xl font-semibold text-slate-900">
+            Una experiencia diseñada para ti
+          </h2>
+          <p className="py-4 text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
+            commodi tenetur ducimus dolorum, aspernatur aliquid veniam facilis
+            quae libero ex quod quibusdam aliquam delectus atque facere quidem
+            praesentium a odit!
+          </p>
+        </div>
+        <div className="">
+          <img
+            className="rounded-lg"
+            src="https://images.unsplash.com/photo-1629537747452-53f71026e750?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="#"
+          />
         </div>
       </div>
     </div>

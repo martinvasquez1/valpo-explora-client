@@ -14,7 +14,7 @@ export default function DesktopNav() {
         </li>
         <li>
           <a
-            className="rounded-xl bg-sky-600 px-8 py-2 text-white hover:bg-sky-500"
+            className="rounded-xl bg-blue-900 px-8 py-2 text-white hover:bg-sky-600"
             href="#"
           >
             Tour
