@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 export default function Layout() {
   return (
-    <div className="font-roboto bg-[#f5fdff]">
+    <div className="font-roboto">
       <Header />
       <Outlet />
       <Footer />
