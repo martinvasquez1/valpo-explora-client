@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function DesktopNav() {
   return (
     <nav className="hidden sm:block">
@@ -8,9 +10,9 @@ export default function DesktopNav() {
           </a>
         </li>
         <li>
-          <a href="#" className="font-medium">
+          <Link to="/lugares" className="font-medium">
             Lugares
-          </a>
+          </Link>
         </li>
         <li>
           <a
