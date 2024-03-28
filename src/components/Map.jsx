@@ -4,10 +4,10 @@ import 'leaflet/dist/leaflet.css';
 export default function Map() {
   return (
     <MapContainer
-      center={[51.505, -0.09]}
-      zoom={13}
+      center={[-33.0318082, -71.6472691]}
+      zoom={14}
       scrollWheelZoom={false}
-      className="h-[200px]"
+      className="h-screen"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

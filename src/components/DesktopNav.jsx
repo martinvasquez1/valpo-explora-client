@@ -15,12 +15,12 @@ export default function DesktopNav() {
           </Link>
         </li>
         <li>
-          <a
+          <Link
+            to="/tour"
             className="rounded-xl bg-blue-900 px-8 py-2 font-semibold text-white hover:bg-sky-600"
-            href="#"
           >
             Tour
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
