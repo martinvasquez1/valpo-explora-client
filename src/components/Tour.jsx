@@ -30,42 +30,48 @@ export default function Tour() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio earum
             dicta ratione laboriosam culpa explicabo in quibusdam amet!
           </p>
-          <form onSubmit={() => console.log('Submit')}>
-            <Select
-              className="py-4"
-              isDisabled={false}
-              isLoading={false}
-              isClearable={true}
-              isSearchable={true}
-              name="lugar"
-              placeholder="Localización..."
-              options={placeOptions}
-              required={true}
-            />
-            <div className="flex flex-col gap-2">
+          <form onSubmit={() => console.log('Submit')} className="pt-6">
+            <div>
+              <label htmlFor="place">Localización</label>
+              <Select
+                className="pt-2"
+                isDisabled={false}
+                isLoading={false}
+                isClearable={true}
+                isSearchable={true}
+                name="lugar"
+                inputId="place"
+                placeholder="Lugar..."
+                options={placeOptions}
+                required={true}
+              />
+            </div>
+            <div className="pt-4">
               <label htmlFor="time">Duración</label>
               <Select
-                className="py-2"
+                className="pt-2"
                 isDisabled={false}
                 isLoading={false}
                 isClearable={true}
                 name="time"
-                id="time"
+                inputId="time"
                 placeholder="Tiempo..."
                 options={timeOptions}
                 required={true}
               />
             </div>
             <div>
-              <p className="my-4">Intereses</p>
-              <div className="flex flex-wrap gap-4">
+              <p className="mb-2 mt-4">Intereses</p>
+              <div className="flex flex-wrap gap-2">
                 <Checkbox name="arte" text="Arte" />
                 <Checkbox name="miradores" text="Miradores" />
                 <Checkbox name="museos" text="Museos" />
               </div>
             </div>
-
-            <Button type="submit" className="mt-4 flex items-center gap-2">
+            <Button
+              type="submit"
+              className="mt-6 flex w-full items-center justify-center gap-2 py-4"
+            >
               <IconContext.Provider value={{ size: '1.0em' }}>
                 <FaMapMarkerAlt />
               </IconContext.Provider>
