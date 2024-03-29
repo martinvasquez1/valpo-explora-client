@@ -6,10 +6,16 @@ import Button from './Button.jsx';
 import Map from './Map.jsx';
 import Checkbox from './Checkbox.jsx';
 
-const options = [
+const placeOptions = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
+];
+
+const timeOptions = [
+  { value: '30', label: '30 minutos' },
+  { value: '60', label: '1 hora' },
+  { value: '90', label: '1 hora y 30 minutos' },
 ];
 
 export default function Tour() {
@@ -33,16 +39,21 @@ export default function Tour() {
               isSearchable={true}
               name="lugar"
               placeholder="Localización..."
-              options={options}
+              options={placeOptions}
               required={true}
             />
             <div className="flex flex-col gap-2">
-              <label htmlFor="time">Duración (en minutos)</label>
-              <input
-                type="number"
+              <label htmlFor="time">Duración</label>
+              <Select
+                className="py-2"
+                isDisabled={false}
+                isLoading={false}
+                isClearable={true}
                 name="time"
                 id="time"
-                className="p-2 invalid:bg-red-300"
+                placeholder="Tiempo..."
+                options={timeOptions}
+                required={true}
               />
             </div>
             <div>
