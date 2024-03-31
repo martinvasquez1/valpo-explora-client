@@ -6,7 +6,7 @@ const buttonStyles = cva(['rounded-xl'], {
     variant: {
       default: ['bg-blue-900 hover:bg-sky-600 text-white'],
       ghost: ['hover:bg-gray-100'],
-      destructive: [],
+      destructive: ['bg-red-600 text-white hover:bg-red-500'],
       link: [],
     },
     size: {
