@@ -5,9 +5,9 @@ export default function DesktopNav() {
     <nav className="hidden sm:block">
       <ul className="flex items-center gap-8 text-slate-900">
         <li>
-          <a href="#" className="font-medium">
+          <Link to="/" className="font-medium">
             Inicio
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/lugares" className="font-medium">

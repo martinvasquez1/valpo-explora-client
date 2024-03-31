@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <div className="bg-white">
-      <header className="relative mx-auto flex max-w-5xl items-center justify-between px-8 py-6">
+      <header className="relative mx-auto flex items-center justify-between border-b border-slate-700/10 px-8 py-6">
         <Logo />
         <Button
           variant="ghost"
