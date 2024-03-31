@@ -21,8 +21,8 @@ const timeOptions = [
 export default function Tour() {
   return (
     <div className="min-h-screen bg-stone-100">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-8 py-8 sm:flex-row">
-        <div className="flex-1">
+      <div className="mx-auto flex flex-col sm:flex-row">
+        <div className="flex-1 p-8">
           <h1 className="font-playfair text-4xl font-semibold text-slate-900">
             Tour
           </h1>
@@ -79,7 +79,7 @@ export default function Tour() {
             </Button>
           </form>
         </div>
-        <div className="flex-1 rounded-xl">
+        <div className="flex-[3] rounded-xl">
           <Map />
         </div>
       </div>
