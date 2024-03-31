@@ -1,5 +1,7 @@
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+
+import RoutingControl from './RoutingControl';
 
 export default function Map() {
   return (
@@ -13,7 +15,11 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+      <RoutingControl
+        cordsStart={[-33.040265, -71.632679]}
+        cordsEnd={[-33.04085, -71.625888]}
+      />
+      <Marker position={[-33.0318082, -71.6472691]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
