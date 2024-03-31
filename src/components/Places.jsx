@@ -8,7 +8,7 @@ import PlaceCard from './PlaceCard';
 
 const amountResults = 14;
 
-export default function Lugares() {
+export default function Places() {
   const [query, setQuery] = useState('');
   const [text, setText] = useState('');
 

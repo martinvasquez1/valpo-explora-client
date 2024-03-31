@@ -4,7 +4,10 @@ import { IconContext } from 'react-icons';
 
 export default function PlaceCard({ data }) {
   return (
-    <Link to="/" className="rounded-xl bg-white shadow-md hover:bg-sky-100">
+    <Link
+      to={`/lugares/123456`}
+      className="rounded-xl bg-white shadow-md hover:bg-sky-100"
+    >
       <div>
         <img
           className="h-52 w-full rounded-t-lg object-cover"
