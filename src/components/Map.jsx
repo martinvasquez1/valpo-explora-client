@@ -1,13 +1,19 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import RoutingControl from './RoutingControl';
+import DraggableMarker from './DraggableMarker';
+
+const coordsInitial = { lat: -33.0318082, lng: -71.6472691 };
 
 export default function Map() {
+  const [initialPosition, setInitialPosition] = useState(coordsInitial);
+
   return (
     <MapContainer
       center={[-33.0318082, -71.6472691]}
-      zoom={14}
+      zoom={16}
       scrollWheelZoom={false}
       className="h-screen"
     >
@@ -15,15 +21,16 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <DraggableMarker
+        position={initialPosition}
+        setPosition={setInitialPosition}
+      />
+      {/*
       <RoutingControl
         cordsStart={[-33.040265, -71.632679]}
         cordsEnd={[-33.04085, -71.625888]}
       />
-      <Marker position={[-33.0318082, -71.6472691]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      */}
     </MapContainer>
   );
 }
