@@ -5,13 +5,13 @@ import { IconContext } from 'react-icons';
 export default function PlaceCard({ data }) {
   return (
     <Link
-      to={`/lugares/123456`}
+      to={`/lugares/${data._id}`}
       className="rounded-xl bg-white shadow-md hover:bg-sky-100"
     >
       <div>
         <img
           className="h-52 w-full rounded-t-lg object-cover"
-          src={data.imgSrc}
+          src={data.imageUrl}
         />
       </div>
       <div className="rounded-b-lg px-4 py-6 ">

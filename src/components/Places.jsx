@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import usePlaces from '../hooks/usePlaces';
 
 import SearchBar from './SearchBar';
 import Button from './Button';
@@ -6,27 +7,19 @@ import { IconContext } from 'react-icons';
 import { IoIosSearch } from 'react-icons/io';
 import PlaceCard from './PlaceCard';
 
-const amountResults = 14;
-
 export default function Places() {
   const [query, setQuery] = useState('');
   const [text, setText] = useState('');
+
+  const { places, isLoading, isError } = usePlaces();
 
   function search(e) {
     e.preventDefault();
     setQuery(text);
   }
 
-  const mockPlaces = [];
-
-  for (let i = 0; i < amountResults; i++) {
-    const data = {
-      name: 'Lorem ipsum',
-      imgSrc: 'https://source.unsplash.com/random/?valparaiso' + '&' + i,
-      id: i,
-    };
-    mockPlaces.push(data);
-  }
+  if (isLoading) return <div>Spinner</div>;
+  if (isError) return <div>Error</div>;
 
   return (
     <div className="min-h-screen bg-stone-100">
@@ -48,8 +41,8 @@ export default function Places() {
         </form>
         <div>
           <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-            {mockPlaces.map((place) => {
-              return <PlaceCard key={place.id} data={place} />;
+            {places.data.places.map((place) => {
+              return <PlaceCard key={place._id} data={place} />;
             })}
           </div>
         </div>
