@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom';
+import usePlaces from '../hooks/usePlaces.jsx';
 
 import PlaceCard from './PlaceCard.jsx';
+import Spinner from './Spinner.jsx';
 
-const mockPlaces = [
-  {
-    name: 'Lorem ipsum',
-    imgSrc:
-      'https://images.unsplash.com/photo-1617173205830-95d15d469996?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    id: 0,
-  },
-  {
-    name: 'Dolor, sit amet',
-    imgSrc:
-      'https://images.unsplash.com/photo-1586461827441-b4cf43af68ee?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    id: 1,
-  },
-  {
-    name: 'In, sapiente',
-    imgSrc:
-      'https://images.unsplash.com/photo-1552686637-83c59eba15f6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    id: 2,
-  },
-];
+function HomeCards() {
+  const { places, isLoading, isError } = usePlaces();
 
-export default function Layout() {
+  if (isLoading) return <Spinner />;
+  if (isError)
+    return (
+      <div className="pt-4 text-lg">No se pudo obtener destinos populares.</div>
+    );
+
+  const topThree = places.data.places.slice(0, 3);
+
+  return (
+    <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
+      {topThree.map((place) => {
+        return <PlaceCard key={place.id} data={place} />;
+      })}
+    </div>
+  );
+}
+
+export default function Home() {
   return (
     <div className="mx-auto">
       <div className="bg-blue-100">
@@ -73,11 +74,7 @@ export default function Layout() {
         <h2 className="font-playfair text-3xl font-semibold text-slate-900">
           Destinos populares
         </h2>
-        <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
-          {mockPlaces.map((place) => {
-            return <PlaceCard key={place.id} data={place} />;
-          })}
-        </div>
+        <HomeCards />
       </div>
       <div className="bg-stone-100">
         <div className="mx-auto mt-6 flex max-w-5xl flex-col gap-4 px-8 py-10 sm:flex-row sm:gap-10">
