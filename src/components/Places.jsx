@@ -1,25 +1,37 @@
 import { useState } from 'react';
 import usePlaces from '../hooks/usePlaces';
+import { IconContext } from 'react-icons';
+import { IoIosSearch } from 'react-icons/io';
 
 import SearchBar from './SearchBar';
 import Button from './Button';
-import { IconContext } from 'react-icons';
-import { IoIosSearch } from 'react-icons/io';
 import PlaceCard from './PlaceCard';
+import ErrorResult from './ErrorResult';
+import Spinner from './Spinner';
+
+function SearchResults() {
+  const { places, isLoading, isError } = usePlaces();
+
+  if (isLoading) return <Spinner />;
+  if (isError) return <ErrorResult />;
+
+  return (
+    <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+      {places.data.places.map((place) => {
+        return <PlaceCard key={place._id} data={place} />;
+      })}
+    </div>
+  );
+}
 
 export default function Places() {
   const [query, setQuery] = useState('');
   const [text, setText] = useState('');
 
-  const { places, isLoading, isError } = usePlaces();
-
   function search(e) {
     e.preventDefault();
     setQuery(text);
   }
-
-  if (isLoading) return <div>Spinner</div>;
-  if (isError) return <div>Error</div>;
 
   return (
     <div className="min-h-screen bg-stone-100">
@@ -39,13 +51,7 @@ export default function Places() {
             </IconContext.Provider>
           </Button>
         </form>
-        <div>
-          <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-            {places.data.places.map((place) => {
-              return <PlaceCard key={place._id} data={place} />;
-            })}
-          </div>
-        </div>
+        <SearchResults />
       </div>
     </div>
   );

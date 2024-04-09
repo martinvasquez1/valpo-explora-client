@@ -6,6 +6,7 @@ export default function usePlaces() {
   const { data, error, isLoading } = useSWR(
     `${import.meta.env.VITE_API_URL}places/`,
     fetcher,
+    { shouldRetryOnError: false },
   );
 
   return {
