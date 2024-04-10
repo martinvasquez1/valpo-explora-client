@@ -5,11 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import RoutingControl from './RoutingControl';
 import DraggableMarker from './DraggableMarker';
 
-const coordsInitial = { lat: -33.0318082, lng: -71.6472691 };
-
-export default function Map() {
-  const [initialPosition, setInitialPosition] = useState(coordsInitial);
-
+export default function Map({ initialPosition, setInitialPosition }) {
   return (
     <MapContainer
       center={[-33.0318082, -71.6472691]}

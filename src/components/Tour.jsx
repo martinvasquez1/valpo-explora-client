@@ -4,8 +4,11 @@ import TourForm from './TourForm.jsx';
 import Map from './Map.jsx';
 import Route from './Route.jsx';
 
+const coordsInitial = { lat: -33.0318082, lng: -71.6472691 };
+
 export default function Tour() {
   const [showForm, setShowForm] = useState(true);
+  const [initialPosition, setInitialPosition] = useState(coordsInitial);
 
   return (
     <div className="min-h-screen bg-stone-100">
@@ -17,13 +20,19 @@ export default function Tour() {
             </h1>
           </div>
           {showForm ? (
-            <TourForm setShowForm={setShowForm} />
+            <TourForm
+              setShowForm={setShowForm}
+              initialPosition={initialPosition}
+            />
           ) : (
             <Route setShowForm={setShowForm} />
           )}
         </div>
         <div className="flex-[3] rounded-xl">
-          <Map />
+          <Map
+            initialPosition={initialPosition}
+            setInitialPosition={setInitialPosition}
+          />
         </div>
       </div>
     </div>
