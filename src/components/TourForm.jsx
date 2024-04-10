@@ -18,7 +18,7 @@ const timeOptions = [
   { value: '90', label: '1 hora y 30 minutos' },
 ];
 
-export default function TourForm({ setShowForm, initialPosition }) {
+export default function TourForm({ setShowForm, initialPosition, setRoute }) {
   const { trigger, isMutating } = useSendRouteForm();
 
   const [comuna, setComuna] = useState('');
@@ -47,8 +47,8 @@ export default function TourForm({ setShowForm, initialPosition }) {
         initialLng: initialPosition.lng,
       };
       const result = await trigger(data);
-      console.log('result', result);
-      // setShowForm(false);
+      setRoute(result.data.route);
+      setShowForm(false);
     } catch (e) {
       // error handling
     }

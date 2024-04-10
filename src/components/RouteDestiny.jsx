@@ -1,9 +1,12 @@
 import { IconContext } from 'react-icons';
 import { IoIosCheckmark } from 'react-icons/io';
+import useAddress from '../hooks/useAddress';
 
 import Button from './Button.jsx';
 
-export default function RouteDestiny({}) {
+export default function RouteDestiny({ data }) {
+  const { direction, isLoading, isError } = useAddress(data.lat, data.lng);
+
   return (
     <div className="flex gap-2">
       <div className="flex flex-col items-center">
@@ -20,12 +23,14 @@ export default function RouteDestiny({}) {
         <div className="flex-1">
           <div className="flex items-center">
             <div className="flex-1 truncate font-medium text-slate-900">
-              Lorem ipsum, dolor sit amet
+              {data.name}
             </div>
           </div>
         </div>
         <div className="flex-1 pb-4">
-          <span className="truncate text-slate-500">1160 Jackson 5</span>
+          <span className="truncate text-slate-500">
+            {isLoading ? '...' : isError ? '' : direction.address.road}
+          </span>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ const coordsInitial = { lat: -33.0318082, lng: -71.6472691 };
 export default function Tour() {
   const [showForm, setShowForm] = useState(true);
   const [initialPosition, setInitialPosition] = useState(coordsInitial);
+  const [route, setRoute] = useState([]);
 
   return (
     <div className="min-h-screen bg-stone-100">
@@ -23,9 +24,14 @@ export default function Tour() {
             <TourForm
               setShowForm={setShowForm}
               initialPosition={initialPosition}
+              setRoute={setRoute}
             />
           ) : (
-            <Route setShowForm={setShowForm} />
+            <Route
+              setShowForm={setShowForm}
+              route={route}
+              setRoute={setRoute}
+            />
           )}
         </div>
         <div className="flex-[3] rounded-xl">
