@@ -3,16 +3,44 @@ import { IconContext } from 'react-icons';
 import RouteDestiny from './RouteDestiny.jsx';
 import Button from './Button.jsx';
 
-export default function Route({ setShowForm, route, setRoute }) {
+export default function Route({
+  setShowForm,
+  route,
+  setRoute,
+  start,
+  setStart,
+}) {
   return (
     <div>
       <div className="flex flex-col pt-4">
-        {route.map((destiny) => {
-          const isInitialPosition = destiny._id === 0;
-          if (isInitialPosition) {
+        {route.map((destiny, i) => {
+          if (i === 0) {
             return;
           }
-          return <RouteDestiny key={destiny._id} data={destiny} />;
+
+          if (i === start) {
+            return (
+              <RouteDestiny
+                key={destiny._id}
+                data={destiny}
+                handleClick={() => setStart((prev) => prev - 1)}
+              />
+            );
+          }
+
+          if (i === start + 1) {
+            return (
+              <RouteDestiny
+                key={destiny._id}
+                data={destiny}
+                handleClick={() => setStart((prev) => prev + 1)}
+              />
+            );
+          }
+
+          return (
+            <RouteDestiny key={destiny._id} data={destiny} disabled={true} />
+          );
         })}
       </div>
       <div className="mt-4">

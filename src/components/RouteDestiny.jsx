@@ -4,13 +4,17 @@ import useAddress from '../hooks/useAddress';
 
 import Button from './Button.jsx';
 
-export default function RouteDestiny({ data }) {
+export default function RouteDestiny({ data, handleClick, disabled }) {
   const { direction, isLoading, isError } = useAddress(data.lat, data.lng);
 
   return (
     <div className="flex gap-2">
       <div className="flex flex-col items-center">
-        <Button className="rounded-full border-2 border-gray-100 bg-white p-0">
+        <Button
+          onClick={handleClick}
+          className="rounded-full border-2 border-gray-100 bg-white p-0"
+          disabled={disabled}
+        >
           <IconContext.Provider value={{ size: '1.5em', color: '#000' }}>
             <IoIosCheckmark />
           </IconContext.Provider>

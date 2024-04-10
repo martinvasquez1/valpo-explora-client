@@ -10,6 +10,9 @@ export default function Tour() {
   const [showForm, setShowForm] = useState(true);
   const [initialPosition, setInitialPosition] = useState(coordsInitial);
   const [route, setRoute] = useState([]);
+  const [start, setStart] = useState(0);
+
+  console.log(start);
 
   return (
     <div className="min-h-screen bg-stone-100">
@@ -31,6 +34,8 @@ export default function Tour() {
               setShowForm={setShowForm}
               route={route}
               setRoute={setRoute}
+              start={start}
+              setStart={setStart}
             />
           )}
         </div>
@@ -38,6 +43,9 @@ export default function Tour() {
           <Map
             initialPosition={initialPosition}
             setInitialPosition={setInitialPosition}
+            showForm={showForm}
+            route={route}
+            start={start}
           />
         </div>
       </div>
