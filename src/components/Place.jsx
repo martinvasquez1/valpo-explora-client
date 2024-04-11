@@ -8,7 +8,12 @@ export default function Place() {
   const { id } = useParams();
   const { place, isLoading, isError } = usePlace(id);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div className="min-h-screen">
+        <Spinner />
+      </div>
+    );
   if (isError)
     return (
       <div className="mx-auto max-w-5xl p-8">
