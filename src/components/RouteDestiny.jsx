@@ -2,7 +2,6 @@ import { IconContext } from 'react-icons';
 import { IoIosCheckmark } from 'react-icons/io';
 import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
-import useAddress from '../hooks/useAddress';
 
 import Button from './Button.jsx';
 import { Link } from 'react-router-dom';
@@ -42,8 +41,6 @@ export default function RouteDestiny({
   variant,
   isLastDestiny,
 }) {
-  const { direction, isLoading, isError } = useAddress(data.lat, data.lng);
-
   return (
     <div className={twMerge(textStyles({ variant }), 'flex gap-2')}>
       <div className="flex flex-col items-center">
@@ -73,9 +70,7 @@ export default function RouteDestiny({
             </Link>
           </div>
         </div>
-        <p className="truncate pb-4 text-slate-400">
-          {isLoading ? '...' : isError ? '' : direction.address.road}
-        </p>
+        <p className="truncate pb-4 text-slate-400">{data.address}</p>
       </div>
     </div>
   );
