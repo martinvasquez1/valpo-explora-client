@@ -1,5 +1,3 @@
-import { IconContext } from 'react-icons';
-
 import RouteDestiny from './RouteDestiny.jsx';
 import Button from './Button.jsx';
 
@@ -55,7 +53,8 @@ export default function Route({
       </div>
       <div className="mt-4">
         <Button
-          variant="destructive"
+          variant="secondary"
+          className="font-medium"
           type="button"
           onClick={() => {
             setShowForm(true);
@@ -63,9 +62,7 @@ export default function Route({
             setStart(0);
           }}
         >
-          <IconContext.Provider value={{ size: '1.5em' }}>
-            Borrar ruta
-          </IconContext.Provider>
+          Terminar recorrido
         </Button>
       </div>
     </div>

@@ -7,7 +7,7 @@ const buttonStyles = cva(['rounded-xl'], {
       default: ['bg-blue-900 hover:bg-sky-600 text-white'],
       ghost: ['hover:bg-gray-100'],
       destructive: ['bg-red-600 text-white hover:bg-red-500'],
-      link: [],
+      secondary: ['bg-sky-100 text-blue-700 hover:bg-sky-200'],
     },
     size: {
       default: ['px-8 py-2'],

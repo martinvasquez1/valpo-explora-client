@@ -18,7 +18,7 @@ function HomeCards() {
   return (
     <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
       {topThree.map((place) => {
-        return <PlaceCard key={place.id} data={place} />;
+        return <PlaceCard key={place._id} data={place} />;
       })}
     </div>
   );
