@@ -15,9 +15,9 @@ export default function Tour() {
   console.log(start);
 
   return (
-    <div className="min-h-screen bg-stone-100">
+    <div className="min-h-screen">
       <div className="mx-auto flex flex-col sm:flex-row">
-        <div className="flex-1 p-8">
+        <div className="h-screen min-w-0 flex-1 overflow-y-scroll p-8">
           <div className="flex items-center justify-between">
             <h1 className="font-playfair text-4xl font-semibold text-slate-900">
               Tour

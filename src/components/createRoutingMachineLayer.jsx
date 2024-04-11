@@ -10,6 +10,7 @@ const createRoutingMachineLayer = ({ cordsStart, cordsEnd }) => {
       L.latLng(cordsEnd[0], cordsEnd[1]),
     ],
     lineOptions: {
+      addWaypoints: false,
       styles: [
         {
           color: '#1e3a8a',

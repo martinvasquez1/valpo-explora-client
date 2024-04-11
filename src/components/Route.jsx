@@ -24,6 +24,8 @@ export default function Route({
                 key={destiny._id}
                 data={destiny}
                 handleClick={() => setStart((prev) => prev - 1)}
+                variant="lastVisited"
+                isLastDestiny={i === route.length - 1}
               />
             );
           }
@@ -34,12 +36,20 @@ export default function Route({
                 key={destiny._id}
                 data={destiny}
                 handleClick={() => setStart((prev) => prev + 1)}
+                variant="destiny"
+                isLastDestiny={i === route.length - 1}
               />
             );
           }
 
           return (
-            <RouteDestiny key={destiny._id} data={destiny} disabled={true} />
+            <RouteDestiny
+              key={destiny._id}
+              data={destiny}
+              disabled={true}
+              variant={i > start ? 'notVisited' : 'visited'}
+              isLastDestiny={i === route.length - 1}
+            />
           );
         })}
       </div>
@@ -50,6 +60,7 @@ export default function Route({
           onClick={() => {
             setShowForm(true);
             setRoute([]);
+            setStart(0);
           }}
         >
           <IconContext.Provider value={{ size: '1.5em' }}>
