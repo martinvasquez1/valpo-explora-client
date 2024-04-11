@@ -1,4 +1,5 @@
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -15,13 +16,20 @@ export default function Footer() {
         <div className="flex flex-1 justify-center sm:items-center sm:pl-6">
           <div className="flex flex-1 flex-col gap-6 sm:gap-4">
             <div className="flex">
-              <p className="font-playfair text-lg font-bold">Home</p>
+              <p className="font-playfair text-lg font-bold">Servicios</p>
             </div>
             <div>
               <ul className="">
-                <li className="mb-1">Inicio</li>
-                <li className="mb-1">Lugares</li>
-                <li>Tour</li>
+                <li>
+                  <Link to="/lugares" className="mb-1">
+                    Lugares
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tour" className="mb-1">
+                    Tour
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -33,7 +41,6 @@ export default function Footer() {
               <ul className="">
                 <li className="mb-1">Ipsum</li>
                 <li className="mb-1">Dolor</li>
-                <li>Sit</li>
               </ul>
             </div>
           </div>
